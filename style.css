@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+.carousel{
+    width: clamp(200px, 100%, 400px);
+    height: 250px;
+    background: #000;
+    position: relative;
+    border-radius: 15px;
+}
+.carousel > .triggers {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+}
+.carousel > .triggers > .trigger{
+    padding: 4px;
+    background: #fff;
+    margin: 10px;
+    font-weight: 900;
+    font-size: 20px;
+    width: 25px;
+    height: 25px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.carousel > .item{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 200px;
+    width: 140px;
+    border-radius: 10px;
+    background: rgb(216, 216, 216);
+    pointer-events: none;
+    opacity: 0;
+    transition: all ease-in-out .5s;
+}
+.carousel > .item.active{
+    pointer-events: all;
+    opacity: 1;
+}
+
+
+
+/* add ons */
+.carousel > .item:nth-child(2){
+    background: rgb(229, 255, 0);
+}
+.carousel > .item:nth-child(3){
+    background: red;
+}
